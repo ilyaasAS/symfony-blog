@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}Welcome!{% endblock %}</title>
+        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text><text y=%221.3em%22 x=%220.2em%22 font-size=%2276%22 fill=%22%23fff%22>sf</text></svg>">
+        {% block stylesheets %}
+        {% endblock %}
+
+        {% block javascripts %}
+            {% block importmap %}{{ importmap('app') }}{% endblock %}
+        {% endblock %}
+    </head>
+    <body data-turbo="false">
+        <!-- Inclusion de la Navbar -->
+        {% include 'components/navbar.html.twig' %}
+        
+        <!-- Contenu de la page -->
+        <main>
+            {% block body %}
+            {% endblock %}
+        </main>
+    </body>
+</html>
+
+// Créer le Hero avec image est présentation.
+// Créer un Formulaire avec: email, message
+// Afficher le formulaire dans la page d'Accueil
+
+// Créer un Entité et son Repository
+
+php bin/console make:entity Contact
+
+// Créer un route pour traiter le formulaire:
+
+php bin/console make:form ContactType
+php bin/console make:controller ContactController
+
+
+
+// Enregistrer les données la BD
+
+Configurer la base de données .env
+
+php bin/console make:migration
+php bin/console doctrine:migrations:migrate

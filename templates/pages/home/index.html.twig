@@ -1,0 +1,28 @@
+{% block body %}
+    <!-- Section Hero -->
+    <section class="hero bg-gray-800 text-white text-center py-16">
+        <div class="container mx-auto">
+            <h1 class="text-4xl font-bold mb-4">Bienvenue sur Mon Blog</h1>
+            <img src="{{ asset('images/hero-image.jpg') }}" alt="Image de Présentation" class="mx-auto mb-4 w-1/2 rounded-lg shadow-lg" />
+            <p class="text-lg">Ceci est une présentation de votre blog. Découvrez les articles, les nouvelles et plus encore.</p>
+        </div>
+    </section>
+
+    <!-- Section Contact -->
+    <section class="contact py-12">
+        <div class="container mx-auto text-center">
+            <h2 class="text-3xl font-semibold mb-6">Contactez-nous</h2>
+            <div class="max-w-md mx-auto">
+                {{ form_start(form, {'attr': {'class': 'space-y-4'}}) }}
+                    <div class="form-group">
+                        {{ form_row(form.email, {'attr': {'class': 'w-full p-2 border rounded'}}) }}
+                    </div>
+                    <div class="form-group">
+                        {{ form_row(form.message, {'attr': {'class': 'w-full p-2 border rounded'}}) }}
+                    </div>
+                    <button type="submit" class="bg-blue-500 text-white px-4 py-2 mt-4 rounded hover:bg-blue-700">Envoyer</button>
+                {{ form_end(form) }}
+            </div>
+        </div>
+    </section>
+{% endblock %}

@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Roboto+Serif:ital,opsz,wght@0,8..144,100..900;1,8..144,100..900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+    font-family: "Roboto", serif;
+
+    .navbar {
+        background-color: purple;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 10px;
+    }
+
+    #navbar-menu {
+        display: flex;
+        padding-right: 10px;
+        gap: 10px;
+        color: white;
+        transition: all 0.01ms ease-in-out;
+    }
+    #navbar-menu-button {
+        display: none;
+    }
+
+    @media(max-width: 750px) {
+        #navbar-menu-button {
+            display: flex;
+        }
+        #navbar-menu {
+            flex-direction: column;
+            position: absolute;
+            left: 0;
+            top: 45px;
+            background-color: purple;
+            min-width: 50vw;
+            min-height: 50vh;
+            padding: 10px;
+        }
+    }
+}

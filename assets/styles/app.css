@@ -8,7 +8,7 @@
     font-family: "Roboto", serif;
 
     .navbar {
-        background-color: purple;
+        background-color: rgb(0, 4, 255);
         display: flex;
         align-items: center;
         justify-content: space-between;
